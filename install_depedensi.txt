@@ -1,0 +1,119 @@
+
+Langkah 1: Inisialisasi Module & Instal Dependensi
+# 1. Inisialisasi Go Module
+go mod init github.com/teddyjuanda/ledger-api
+
+# 2. Instal Gin (Framework HTTP)
+go get -u github.com/gin-gonic/gin
+
+# 3. Instal GORM (ORM) dan Driver MySQL
+go get -u gorm.io/gorm
+go get -u gorm.io/driver/mysql
+
+# 4. Instal JWT, Bcrypt, Validator, dan Viper (Config)
+go get -u github.com/golang-jwt/jwt/v5
+xl/crypto/bcrypt # (Bcrypt bawaan dari golang.org/x/crypto/bcrypt)
+go get -u golang.org/x/crypto/bcrypt
+go get -u github.com/go-playground/validator/v10
+go get -u github.com/spf13/viper
+
+# 5. Instal Swaggo (Swagger) untuk dokumentasi API
+go get -u github.com/swaggo/swag/cmd/swag
+go get -u github.com/swaggo/gin-swagger
+go get -u github.com/swaggo/files
+
+Langkah 2: Instal Alat Global (Goose & Air)
+go install github.com/air-verse/air@latest
+air init
+go install github.com/pressly/goose/v3/cmd/goose@latest
+
+struktur project folder 
+ledger-api/
+
+├── cmd/
+│   └── api/
+│       └── main.go
+│
+├── configs/
+├── docs/
+├── internal/
+│   ├─── router/
+│   ├─── middleware/
+│   ├─── models/
+│   └─── controllers/
+│        ├─── auth/
+│        ├─── coa/
+│        ├─── cost_center/
+│        ├─── dashboard/
+│        ├─── data_indicator/
+│        ├─── department/
+│        ├─── depo/
+│        ├─── division/
+│        ├─── fiscal_period/
+│        ├─── journal/
+│        ├─── journal_source/
+│        ├─── ledger/
+│        ├─── posting_balance/
+│        ├─── product/
+│        ├─── product_mapped/
+│        ├─── profile/
+│        ├─── report/
+│        ├─── repository/
+│        ├─── sales/
+│        ├─── segment/
+│        ├─── service/
+│        ├─── trial_balance/
+│        ├─── unpost_journal/
+│        └─── user/
+├── pkg/
+├── migrations/
+├── .env
+├── .gitignore
+├── go.mod
+└── go.sum
+
+
+ledger-api
+
+
+# Membuat folder struktur
+# 1. Membuat semua folder struktur utama dan sub-folder di dalam controllers
+mkdir `
+cmd\api,`
+configs,`
+docs,`
+internal,`
+internal\router,`
+internal\middleware,`
+internal\models,`
+internal\controllers,`
+internal\controllers\auth,`
+internal\controllers\coa,`
+internal\controllers\cost_center,`
+internal\controllers\dashboard,`
+internal\controllers\data_indicator,`
+internal\controllers\department,`
+internal\controllers\depo,`
+internal\controllers\division,`
+internal\controllers\fiscal_period,`
+internal\controllers\journal,`
+internal\controllers\journal_source,`
+internal\controllers\ledger,`
+internal\controllers\posting_balance,`
+internal\controllers\product,`
+internal\controllers\product_mapped,`
+internal\controllers\profile,`
+internal\controllers\report,`
+internal\controllers\repository,`
+internal\controllers\sales,`
+internal\controllers\segment,`
+internal\controllers\service,`
+internal\controllers\trial_balance,`
+internal\controllers\unpost_journal,`
+internal\controllers\user,`
+pkg,`
+migrations
+lalu enter
+
+# Membuat file utama
+New-Item -ItemType File -Path cmd/api/main.go, configs/config.go, .env
